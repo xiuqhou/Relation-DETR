@@ -3,16 +3,14 @@ description: Report a bug to help us improve the code.
 title: "[Bug]: "
 labels: ["bug", "triage"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Before submitting Issue, please star the repo to help more people discover this project.
 
   - type: textarea
     attributes:
       label: Bug
       description: Provide console output with error messages and/or screenshots of the bug.
       placeholder: |
+        Star the repo to help more people discover this project.
+
         Include as much information as possible (screenshots, logs, tracebacks etc.) to receive the most helpful response.
     validations:
       required: true

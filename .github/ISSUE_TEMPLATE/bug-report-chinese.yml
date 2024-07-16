@@ -3,16 +3,14 @@ description: 提交Bug来帮助我们改进代码.
 title: "[Bug]: "
 labels: ["bug", "triage"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        **在提交issue之前，请为本仓库点颗star以帮助更多人发现这个项目。**
 
   - type: textarea
     attributes:
       label: Bug
       description: 提供和bug相关的带有错误消息的输出或屏幕截图。
       placeholder: |
+        请点击本仓库主页右上角的star以支持本项目。
+
         请提供尽可能多的信息（屏幕截图、日志、命令等），以帮助我们解决问题。
     validations:
       required: true

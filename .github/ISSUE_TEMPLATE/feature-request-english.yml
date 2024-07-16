@@ -3,16 +3,14 @@ description: Do you want a new feature?
 # title: "[Bug]: "
 labels: ["enhancement"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Before submitting Issue, please star the repo to help more people discover this project.
 
   - type: textarea
     attributes:
       label: Description
       description: A short description of your feature.
       placeholder: |
+        Star the repo to help more people discover this project.
+
         What new feature would you like to see in YOLOv8?
     validations:
       required: true
