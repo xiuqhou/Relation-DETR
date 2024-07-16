@@ -1,0 +1,32 @@
+name: 功能请求 (中文)
+description: 增加新功能的建议
+# title: "[Bug]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **在提交issue之前，请为本仓库点颗star以帮助更多人发现这个项目。**
+
+  - type: textarea
+    attributes:
+      label: 功能描述
+      description: 简短地描述您想要的功能。
+      placeholder: |
+        想让本项目增加什么新功能？
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 用例
+      description: 为您想要的功能提供一个例子，这会帮助我们理解和优先实现功能。
+      placeholder: |
+        如何使用这个功能，谁会使用它？
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: 补充信息
+      description: 其他您想补充的信息请在此处填写。

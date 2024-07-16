@@ -1,0 +1,31 @@
+name: Feature Request (English)
+description: Do you want a new feature?
+# title: "[Bug]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting Issue, please star the repo to help more people discover this project.
+
+  - type: textarea
+    attributes:
+      label: Description
+      description: A short description of your feature.
+      placeholder: |
+        What new feature would you like to see in YOLOv8?
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Use case
+      description: |
+        Describe the use case of your feature request. It will help us understand and prioritize the feature request.
+      placeholder: |
+        How would this feature be used, and who would use it?
+
+  - type: textarea
+    attributes:
+      label: Additional
+      description: Anything else you would like to share?

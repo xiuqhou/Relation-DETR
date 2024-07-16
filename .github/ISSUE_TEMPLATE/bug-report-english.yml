@@ -1,0 +1,42 @@
+name: Bug Report (English)
+description: Report a bug to help us improve the code.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting Issue, please star the repo to help more people discover this project.
+
+  - type: textarea
+    attributes:
+      label: Bug
+      description: Provide console output with error messages and/or screenshots of the bug.
+      placeholder: |
+        Include as much information as possible (screenshots, logs, tracebacks etc.) to receive the most helpful response.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Environment
+      description: Please specify the software and hardware you used to produce the bug.
+      placeholder: |
+        Paste environment information from the beginning of console output, i.e.:
+        ```
+        sys.platform linux
+        Python 3.8.18 | packaged by conda-forge | (default, Dec 23 2023, 17:21:28) [GCC 12.3.0]
+        numpy 1.24.4
+        PyTorch 1.12.1+cu113 @/home/ubuntu22/anaconda3/envs/sl/lib/python3.8/site-packages/torch
+        PyTorch debug build False
+        torch._C._GLIBCXX_USE_CXX11_ABI False
+        GPU available Yes
+        GPU 0 NVIDIA GeForce RTX 3090 (arch=8.6)
+        ```
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Additional
+      description: Anything else you would like to share?

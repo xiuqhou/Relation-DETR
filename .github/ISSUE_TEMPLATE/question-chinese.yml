@@ -1,0 +1,23 @@
+name: 提问问题 (中文)
+description: 提问和本项目相关的问题.
+# title: "[Bug]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **在提交issue之前，请为本仓库点颗star以帮助更多人发现这个项目。**
+
+  - type: textarea
+    attributes:
+      label: Question
+      description: 请描述您的问题
+      placeholder: |
+        请提供尽可能多的信息（屏幕截图、日志、命令等），以帮助我们进行回复。
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 补充信息
+      description: 其他您想补充的信息请在此处填写。

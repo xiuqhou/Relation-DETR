@@ -1,0 +1,42 @@
+name: 提交Bug报告 (中文)
+description: 提交Bug来帮助我们改进代码.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **在提交issue之前，请为本仓库点颗star以帮助更多人发现这个项目。**
+
+  - type: textarea
+    attributes:
+      label: Bug
+      description: 提供和bug相关的带有错误消息的输出或屏幕截图。
+      placeholder: |
+        请提供尽可能多的信息（屏幕截图、日志、命令等），以帮助我们解决问题。
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 环境信息
+      description: 请提供出现该错误时的您的软件和硬件环境信息。
+      placeholder: |
+        将命令行输出/日志最开始的环境信息粘贴到此处，类似这样:
+        ```
+        sys.platform linux
+        Python 3.8.18 | packaged by conda-forge | (default, Dec 23 2023, 17:21:28) [GCC 12.3.0]
+        numpy 1.24.4
+        PyTorch 1.12.1+cu113 @/home/ubuntu22/anaconda3/envs/sl/lib/python3.8/site-packages/torch
+        PyTorch debug build False
+        torch._C._GLIBCXX_USE_CXX11_ABI False
+        GPU available Yes
+        GPU 0 NVIDIA GeForce RTX 3090 (arch=8.6)
+        ```
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: 补充信息
+      description: 其他您想补充的信息请在此处填写。
