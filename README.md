@@ -7,6 +7,7 @@ This repo is the official implementation of [Relation DETR: Exploring Explicit P
 
 ## Update
 
+- [2024-07-07] Release $1\times$ and $2\times$ pretrained models for Relation-DETR-R50 and Relation-DETR-Swin-L, see [Releases v1.0.0](https://github.com/xiuqhou/Relation-DETR/releases/tag/v1.0.0).
 - [2024-07-01] Relation-DETR is accepted to ECCV2024, and code will be released in the repo. Welcome to your attention!
 
 ## License
