@@ -5,9 +5,15 @@ By [Xiuquan Hou](https://github.com/xiuqhou), [Meiqin Liu](https://scholar.googl
 
 This repo is the official implementation of [Relation DETR: Exploring Explicit Position Relation Prior for Object Detection](https://arxiv.org/abs/2407.11699v1).
 
+<div align="center">
+    <img src="images/convergence_curve.png" width=500>
+</div>
+
 ## Update
 
-- [2024-07-07] Release $1\times$ and $2\times$ pretrained models for Relation-DETR-R50 and Relation-DETR-Swin-L, see [Releases v1.0.0](https://github.com/xiuqhou/Relation-DETR/releases/tag/v1.0.0).
+- [2024-07-18] We release the code for [Relation-DETR](https://arxiv.org/abs/2407.11699v1) following the structure of [Salience-DETR](https://arxiv.org/abs/2403.16131), see [here](https://github.com/xiuqhou/Salience-DETR) for usage.
+- [2024-03-26] Code for [Salience-DETR](https://arxiv.org/abs/2403.16131) is available [here](https://github.com/xiuqhou/Salience-DETR).
+- [2024-07-17] We release the checkpoint for Relation-DETR with ResNet-50 and Swin-L backbones, see [Releases v1.0.0](https://github.com/xiuqhou/Relation-DETR/releases/tag/v1.0.0).
 - [2024-07-01] Relation-DETR is accepted to ECCV2024, and code will be released in the repo. Welcome to your attention!
 
 ## License
