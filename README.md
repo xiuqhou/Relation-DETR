@@ -90,7 +90,7 @@ To evaluate a model with one or more GPUs, specify `CUDA_VISIBLE_DEVICES`, `data
 CUDA_VISIBLE_DEVICES=<gpu_ids> accelerate launch test.py --coco-path /path/to/coco --model-config /path/to/model.py --checkpoint /path/to/checkpoint.pth
 ```
 
-For example, run the following shell to evaluate Relation-DETR with ResNet-50 (1$\times$) on COCO, You can expect to get the final AP about 51.7.
+For example, run the following shell to evaluate Relation-DETR with ResNet-50 (1x) on COCO, You can expect to get the final AP about 51.7.
 
 ```shell
 CUDA_VISIBLE_DEVICES=0 accelerate launch test.py \
