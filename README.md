@@ -20,15 +20,33 @@ This repo is the official implementation of [Relation DETR: Exploring Explicit P
 - [ ] More detailed docs for the code.
 - [ ] Add a instruction about introducing our relation to other models.
 - [ ] Support GradCam and feature visualization.
-- [ ] Update Model ZOO.
 - [ ] Upload more pretrained weights and training logs.
+- [x] Update Model ZOO.
 
 ## Update
 
-- [2024-07-18] We release the code for [Relation-DETR](https://arxiv.org/abs/2407.11699v1).
+- [2024-07-18] Upload Relation-DETR [training logs](https://github.com/xiuqhou/Relation-DETR/issues/2) for pretrained weights.
+- [2024-07-18] We release the code for [Relation-DETR](https://arxiv.org/abs/2407.11699v1), Relation-DETR with Swin-L achieves **58.1 AP**!
 - [2024-03-26] Code for [Salience-DETR](https://arxiv.org/abs/2403.16131) is available [here](https://github.com/xiuqhou/Salience-DETR).
 - [2024-07-17] We release the checkpoint for Relation-DETR with ResNet-50 and Swin-L backbones, see [Releases v1.0.0](https://github.com/xiuqhou/Relation-DETR/releases/tag/v1.0.0).
 - [2024-07-01] Relation-DETR is accepted to ECCV2024. Welcome to your attention!
+
+## Model ZOO
+
+### 12 epoch setting
+
+| Model         | backbone            |                                                                                              Download                                                                                              |  mAP  | AP<sub>50 | AP<sub>75 | AP<sub>S | AP<sub>M | AP<sub>L |
+| ------------- | ------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---: | :-------: | :-------: | :------: | :------: | :------: |
+| Relation DETR | ResNet50            | [config](configs/relation_detr/relation_detr_resnet50_800_1333.py) / [checkpoint](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.0/relation_detr_resnet50_800_1333_coco_1x.pth) / [log](https://github.com/user-attachments/files/16277252/relation_detr_resnet50_800_1333_coco_1x.log) | 51.7  |   69.1    |   56.3    |   36.1   |   55.6   |   66.1   |
+| Relation DETR | Swin-L<sub>(IN-22K) |   [config](configs/relation_detr/relation_detr_swin_l_800_1333.py)  /  [checkpoint](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.0/relation_detr_swin_l_800_1333_coco_1x.pth)   | 57.8  |   76.1    |   62.9    |   41.2   |   62.1   |   74.4   |
+
+### 24 epoch setting
+
+| Model         | backbone            |                                                                                             Download                                                                                             |  mAP  | AP<sub>50 | AP<sub>75 | AP<sub>S | AP<sub>M | AP<sub>L |
+| ------------- | ------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---: | :-------: | :-------: | :------: | :------: | :------: |
+| Relation DETR | ResNet50            | [config](configs/relation_detr/relation_detr_resnet50_800_1333.py) / [checkpoint](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.0/relation_detr_resnet50_800_1333_coco_2x.pth) / [log](https://github.com/user-attachments/files/16277261/relation_detr_resnet50_800_1333_coco_2x.log) | 52.1  |   69.7    |   56.6    |   36.1   |   56.0   |   66.5   |
+| Relation DETR | Swin-L<sub>(IN-22K) |   [config](configs/relation_detr/relation_detr_swin_l_800_1333.py) / [checkpoint](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.0/relation_detr_swin_l_800_1333_coco_2x.pth) / [log](https://github.com/user-attachments/files/16277236/relation_detr_swin_l_800_1333_coco_2x.log)   | 58.1  |   76.4    |   63.5    |   41.8   |   63.0   |   73.5   |
+
 
 ## Get started
 
