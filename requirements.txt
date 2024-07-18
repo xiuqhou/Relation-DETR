@@ -1,0 +1,11 @@
+accelerate
+fvcore
+astunparse
+albumentations
+omegaconf
+pycocotools
+terminaltables
+tensorboard
+iopath
+ninja
+yapf
