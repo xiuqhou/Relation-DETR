@@ -28,7 +28,7 @@ This repo is the official implementation of [Relation DETR: Exploring Explicit P
 - [2024-07-18] We release the code for [Relation-DETR](https://arxiv.org/abs/2407.11699v1).
 - [2024-03-26] Code for [Salience-DETR](https://arxiv.org/abs/2403.16131) is available [here](https://github.com/xiuqhou/Salience-DETR).
 - [2024-07-17] We release the checkpoint for Relation-DETR with ResNet-50 and Swin-L backbones, see [Releases v1.0.0](https://github.com/xiuqhou/Relation-DETR/releases/tag/v1.0.0).
-- [2024-07-01] Relation-DETR is accepted to ECCV2024, and code will be released in the repo. Welcome to your attention!
+- [2024-07-01] Relation-DETR is accepted to ECCV2024. Welcome to your attention!
 
 ## Get started
 
