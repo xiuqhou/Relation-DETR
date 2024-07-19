@@ -488,9 +488,6 @@ def box_rel_encoding(src_boxes, tgt_boxes, eps=1e-5):
     return pos_embed
 
 
-NonZeroReLU = functools.partial(nn.Hardtanh, min_val=1e-6, max_val=1e5)
-
-
 class PositionRelationEmbedding(nn.Module):
     def __init__(
         self,
@@ -498,7 +495,7 @@ class PositionRelationEmbedding(nn.Module):
         num_heads=8,
         temperature=10000.,
         scale=100.,
-        activation_layer=NonZeroReLU,
+        activation_layer=nn.ReLU,
         inplace=True,
     ):
         super().__init__()
