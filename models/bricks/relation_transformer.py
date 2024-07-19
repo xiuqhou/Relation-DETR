@@ -527,7 +527,7 @@ class PositionRelationEmbedding(nn.Module):
         torch._assert(tgt_boxes.shape[-1] == 4, f"tgt_boxes must have 4 coordinates")
         with torch.no_grad():
             pos_embed = box_rel_encoding(src_boxes, tgt_boxes)
-            pos_embed = self.pos_func(pos_embed).permute(0, 3, 1, 2).contiguous()
+            pos_embed = self.pos_func(pos_embed).permute(0, 3, 1, 2).clone()
         pos_embed = self.pos_proj(pos_embed)
 
         return pos_embed
