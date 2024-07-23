@@ -527,4 +527,4 @@ class PositionRelationEmbedding(nn.Module):
             pos_embed = self.pos_func(pos_embed).permute(0, 3, 1, 2)
         pos_embed = self.pos_proj(pos_embed)
 
-        return pos_embed
+        return pos_embed.clone()
