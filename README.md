@@ -21,6 +21,7 @@ This repo is the official implementation of [Relation DETR: Exploring Explicit P
 - [ ] Add a instruction about introducing our relation to other models.
 - [ ] Support GradCam and feature visualization.
 - [ ] Upload more pretrained weights and training logs.
+- [ ] Update visualization code for MC.
 - [x] Update Model ZOO.
 
 ## Update
