@@ -26,7 +26,7 @@ This repo is the official implementation of [Relation DETR: Exploring Explicit P
 
 ## Update
 
-- [2024-07-24] Upload SA-Det-100k dataset, see it in [Hugging Face](https://huggingface.co/datasets/xiuqhou/SA-Det-100k/tree/main) and [Baidu Netdisk](https://pan.baidu.com/s/1Y0QxfoHfKhV-4_zLAKSEyg?pwd=6666).
+- [2024-07-24] Upload SA-Det-100k dataset, see it in [Hugging Face](https://huggingface.co/datasets/xiuqhou/SA-Det-100k/tree/main).
 - [2024-07-18] Upload Relation-DETR [training logs](https://github.com/xiuqhou/Relation-DETR/issues/2) for pretrained weights.
 - [2024-07-18] We release the code for [Relation-DETR](https://arxiv.org/abs/2407.11699v1), Relation-DETR with Swin-L achieves **58.1 AP**!
 - [2024-03-26] Code for [Salience-DETR](https://arxiv.org/abs/2403.16131) is available [here](https://github.com/xiuqhou/Salience-DETR).
@@ -38,7 +38,6 @@ This repo is the official implementation of [Relation DETR: Exploring Explicit P
 [SA-Det-100k](https://github.com/xiuqhou/Relation-DETR) is a large-scale class-agnostic object detection dataset for **Research Purposes only**. The dataset is based on a subset of [SA-1B](https://ai.meta.com/datasets/segment-anything/) (see [LICENSE](https://ai.meta.com/datasets/segment-anything-downloads/)), and all objects belong to the same category `objects`. Because it contains a large number of scenarios but does not provide class-specific annotations, we believe it may be a good choice to pre-training models for a variety of downstream tasks with different categories. The dataset contains about 100k images, and each image is resized using [opencv-python](https://pypi.org/project/opencv-python/) so that the larger one of their height and width is 1333, which is consistent with the data augmentation commonly used to train [COCO](https://cocodataset.org/). The dataset can be found in:
 
 - [Hugging Face](https://huggingface.co/datasets/xiuqhou/SA-Det-100k/tree/main)
-- [Baidu Netdisk](https://pan.baidu.com/s/1Y0QxfoHfKhV-4_zLAKSEyg?pwd=6666) (Password is **6666**)
 
 ## Model ZOO
 
