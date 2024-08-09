@@ -14,7 +14,6 @@ from models.bricks.set_criterion import HybridSetCriterion
 from models.detectors.relation_detr import RelationDETR
 from models.matcher.hungarian_matcher import HungarianMatcher
 from models.necks.channel_mapper import ChannelMapper
-from util.utils import load_checkpoint, load_state_dict
 
 # mostly changed parameters
 embed_dim = 256
