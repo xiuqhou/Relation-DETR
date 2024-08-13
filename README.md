@@ -3,7 +3,7 @@
 
 By [Xiuquan Hou](https://github.com/xiuqhou), [Meiqin Liu](https://scholar.google.com/citations?user=T07OWMkAAAAJ&hl=zh-CN&oi=ao), Senlin Zhang, [Ping Wei](https://scholar.google.com/citations?user=1OQBtdcAAAAJ&hl=zh-CN&oi=ao), [Badong Chen](https://scholar.google.com/citations?user=mq6tPX4AAAAJ&hl=zh-CN&oi=ao), Xuguang Lan.
 
-This repo is the official implementation of [Relation DETR: Exploring Explicit Position Relation Prior for Object Detection](https://arxiv.org/abs/2407.11699v1).
+This repo is the official implementation of [Relation DETR: Exploring Explicit Position Relation Prior for Object Detection](https://arxiv.org/abs/2407.11699v1) accepted to **ECCV2024** (score **5444**, **oral** presentation). [[Arxiv paper link](https://arxiv.org/abs/2407.11699)]
 
 💖 If our [Relation-DETR](https://github.com/xiuqhou/Relation-DETR) or [SA-Det-100k](https://huggingface.co/datasets/xiuqhou/SA-Det-100k/tree/main) dataset is helpful to your researches or projects, please star this repository. Thanks! 🤗
 
@@ -26,6 +26,7 @@ This repo is the official implementation of [Relation DETR: Exploring Explicit P
 
 ## Update
 
+- [2024-08-12] Relation-DETR is selected for **Oral** presentation in ECCV2024!
 - [2024-08-11] The pretrained weight for Relation-DETR on SA-Det-100k are available [here](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.0/relation_detr_resnet50_800_1333_sa_det_100k_1x.pth)!
 - [2024-08-07] Relation-DETR with [FocalNet-large](https://github.com/microsoft/FocalNet/) achieves `63.5AP` on COCO test-dev2017 after fine-tuned for 4 epochs on [Object365](https://www.objects365.org/overview.html), [config](configs/relation_detr/relation_detr_focalnet_large_lrf_fl4_1200_2000.py) and [checkpoint](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.0/relation_detr_focalnet_large_lrf_fl4_o365_4e-coco_2x_1200_2000.pth) are available now!
 - [2024-07-24] Upload SA-Det-100k dataset, see it in [Hugging Face](https://huggingface.co/datasets/xiuqhou/SA-Det-100k/tree/main) and [Ai Studio](https://aistudio.baidu.com/datasetdetail/286554).
