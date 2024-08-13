@@ -3,7 +3,7 @@
 
 By [Xiuquan Hou](https://github.com/xiuqhou), [Meiqin Liu](https://scholar.google.com/citations?user=T07OWMkAAAAJ&hl=zh-CN&oi=ao), Senlin Zhang, [Ping Wei](https://scholar.google.com/citations?user=1OQBtdcAAAAJ&hl=zh-CN&oi=ao), [Badong Chen](https://scholar.google.com/citations?user=mq6tPX4AAAAJ&hl=zh-CN&oi=ao), Xuguang Lan.
 
-This repo is the official implementation of [Relation DETR: Exploring Explicit Position Relation Prior for Object Detection](https://arxiv.org/abs/2407.11699v1) accepted to **ECCV2024** (score **5444**, **oral** presentation). [[Arxiv paper link](https://arxiv.org/abs/2407.11699)]
+This repo is the official implementation of [Relation DETR: Exploring Explicit Position Relation Prior for Object Detection](https://arxiv.org/abs/2407.11699v1) accepted to **ECCV2024** (score **5444**, **oral** presentation). [[Arxiv paper link](https://arxiv.org/abs/2407.11699)], [[论文介绍](https://www.bilibili.com/video/BV13m421377m)], [[代码讲解](https://www.bilibili.com/video/BV1uf421B7e7)]
 
 💖 If our [Relation-DETR](https://github.com/xiuqhou/Relation-DETR) or [SA-Det-100k](https://huggingface.co/datasets/xiuqhou/SA-Det-100k/tree/main) dataset is helpful to your researches or projects, please star this repository. Thanks! 🤗
 
