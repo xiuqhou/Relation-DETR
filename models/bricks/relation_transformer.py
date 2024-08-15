@@ -18,7 +18,7 @@ class RelationTransformer(TwostageTransformer):
         self,
         encoder: nn.Module,
         decoder: nn.Module,
-        num_classes: int = 91,
+        num_classes: int,
         num_feature_levels: int = 4,
         two_stage_num_proposals: int = 900,
         hybrid_num_proposals: int = 900,
