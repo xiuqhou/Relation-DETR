@@ -153,6 +153,76 @@ strong_album = T.Compose([
     T.SanitizeBoundingBox(labels_getter=lambda x: x[-1]),
 ])
 
+# albumentations strong data augmentation
+
+scales_1200 = [int(t * 1.5) for t in [480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800]]
+
+strong_album_1200_2000 = T.Compose([
+    T.RandomChoice([
+        T.RandomShortestSize(min_size=scales_1200, max_size=2000, antialias=True),
+        T.Compose([
+            T.RandomShortestSize([600, 750, 900], antialias=True),
+            RandomSizeCrop(576, 900),
+            T.RandomShortestSize(min_size=scales_1200, max_size=2000, antialias=True),
+        ]),
+    ]),
+    AlbumentationsWrapper(
+        A.Compose(
+            [
+                A.ShiftScaleRotate(
+                    shift_limit=0.0625,
+                    scale_limit=0.0,
+                    rotate_limit=0,
+                    interpolation=1,
+                    border_mode=cv2.BORDER_CONSTANT,
+                    value=0,
+                    p=0.5,
+                ),
+                A.RandomBrightnessContrast(
+                    brightness_limit=(0.1, 0.3),
+                    contrast_limit=(0.1, 0.3),
+                    p=0.2,
+                ),
+                A.OneOf(
+                    [
+                        A.RGBShift(
+                            r_shift_limit=10,
+                            g_shift_limit=10,
+                            b_shift_limit=10,
+                            p=1.0,
+                        ),
+                        A.HueSaturationValue(
+                            hue_shift_limit=20,
+                            sat_shift_limit=30,
+                            val_shift_limit=20,
+                            p=1.0,
+                        ),
+                    ],
+                    p=1.0,
+                ),
+                A.ImageCompression(quality_lower=85, quality_upper=95, p=0.2),
+                A.ChannelShuffle(p=0.1),
+                A.OneOf(
+                    [
+                        A.Blur(blur_limit=3, p=1.0),
+                        A.MedianBlur(blur_limit=3, p=1.0),
+                    ],
+                    p=0.1,
+                ),
+            ],
+            bbox_params=A.BboxParams(
+                format="pascal_voc", label_fields=["labels"], min_visibility=0.0
+            ),
+        )
+    ),
+    T.RandomHorizontalFlip(p=0.5),
+    T.RandomVerticalFlip(p=0.5),
+    T.PILToTensor(),
+    T.ConvertImageDtype(torch.float),
+    T.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)),
+    T.SanitizeBoundingBox(labels_getter=lambda x: x[-1]),
+])
+
 rtdetr_transform = T.Compose([
     T.RandomPhotometricDistort(p=0.8),
     T.RandomZoomOut(p=0.5, fill=0, side_range=(1.0, 4.0)),

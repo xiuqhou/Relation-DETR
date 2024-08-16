@@ -15,7 +15,7 @@ This repo is the official implementation of [Relation DETR: Exploring Explicit P
 
 ...Want more features? Open a [Feature Request](https://github.com/xiuqhou/Relation-DETR/issues/new?assignees=&labels=enhancement&projects=&template=feature-request-english.yml).
 
-- [ ] Support data augmentations from `albumentations`.
+- [x] Support data augmentations from `albumentations`.
 - [ ] Support Mosaic and Mixup data augmentation.
 - [ ] More detailed docs for the code.
 - [ ] Add a instruction about introducing our relation to other models.
