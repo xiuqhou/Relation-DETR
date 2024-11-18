@@ -62,9 +62,12 @@ This repo is the official implementation of [Relation DETR: Exploring Explicit P
 
 **[Other DETR variants:]** We integrate our position relation into existing DETR variants and generate enhanced versions of them. Note some of these weights are newly trained and may produce slightly different results from those reported in our paper. We mark these variants with `++` in the name to distinguish them from their original versions.
 
-| Model  | Backbone | Epoch |                                                                                  Download                                                                                   |  mAP  | AP<sub>50 | AP<sub>75 | AP<sub>S | AP<sub>M | AP<sub>L |
-| ------ | -------- | :---: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---: | :-------: | :-------: | :------: | :------: | :------: |
-| DINO++ | ResNet50 |  12   | [config](configs/dino++/dino++_resnet50_800_1333.py) / [checkpoint](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.1/dino++_resnet50_800_1333_coco_1x.pth) | 50.1  |   67.8    |   54.9    |   33.3   |   53.9   |   63.5   |
+| Model             | Backbone | Epoch |                                                                                                Download                                                                                                |  mAP  | AP<sub>50 | AP<sub>75 | AP<sub>S | AP<sub>M | AP<sub>L |
+| ----------------- | -------- | :---: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---: | :-------: | :-------: | :------: | :------: | :------: |
+| Deformable-DETR++ | ResNet50 |  12   |                                                                  [config](configs/deformable_detr_pp/def_detr_pp_resnet_800_1333.py)                                                                   | 47.0  |   65.6    |   51.2    |   29.3   |   51.0   |   62.2   |
+| Dab-Def-DETR++    | ResNet50 |  12   | [config](configs/dab_def_detr_pp/dab_def_detr_pp_resnet50_800_1333.py) / [checkpoint](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.1/dab_def_detr_pp_resnet50_800_1333_coco_1x.pth) | 48.3  |   66.5    |   52.9    |   32.4   |   52.0   |   62.0   |
+| DN-Def-DETR++     | ResNet50 |  12   |  [config](configs/dn_def_detr_pp/dn_def_detr_pp_resnet50_800_1333.py) / [checkpoint](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.1/dn_def_detr_pp_resnet50_800_1333_coco_1x.pth)   | 47.3  |   65.6    |   51.4    |   29.9   |   50.8   |   62.1   |
+| DINO++            | ResNet50 |  12   |             [config](configs/dino_pp/dino_pp_resnet50_800_1333.py) / [checkpoint](https://github.com/xiuqhou/Relation-DETR/releases/download/v1.0.1/dino_pp_resnet50_800_1333_coco_1x.pth)             | 50.1  |   67.8    |   54.9    |   33.3   |   53.9   |   63.5   |
 
 ### SA-Det-100k
 
