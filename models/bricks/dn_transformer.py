@@ -6,11 +6,11 @@ from torch import nn
 
 from models.bricks.base_transformer import MultiLevelTransformer
 from models.bricks.basic import MLP
+from models.bricks.dino_transformer import DINOTransformerEncoder
 from models.bricks.position_encoding import get_sine_pos_embed
 from models.bricks.relation_transformer import (
     PositionRelationEmbedding,
     RelationTransformerDecoderLayer,
-    RelationTransformerEncoder,
     RelationTransformerEncoderLayer,
 )
 from util.misc import inverse_sigmoid
@@ -171,7 +171,7 @@ class DNTransformerDecoder(nn.Module):
                 self_attn_mask=pos_relation,
             )
 
-            # get output, reference_points are not detached for look_forward_twice
+            # get output, No look_forward_twice
             output_class = self.class_head[layer_idx](query)
             output_coord = self.bbox_head[layer_idx](query) + inverse_sigmoid(reference_points)
             output_coord = output_coord.sigmoid()
@@ -188,49 +188,13 @@ class DNTransformerDecoder(nn.Module):
             if attn_mask is not None:
                 pos_relation.masked_fill_(attn_mask, float("-inf"))
 
-            # iterative bounding box refinement
+            # iterative bounding box refinement, reference_points are detached!
             reference_points = output_coord.detach()
 
         outputs_classes = torch.stack(outputs_classes)
         outputs_coords = torch.stack(outputs_coords)
         return outputs_classes, outputs_coords
 
-
-class DNTransformerEncoder(nn.Module):
-    def __init__(self, encoder_layer: nn.Module, num_layers: int = 6):
-        super().__init__()
-        self.layers = nn.ModuleList([copy.deepcopy(encoder_layer) for _ in range(num_layers)])
-        self.num_layers = num_layers
-        self.embed_dim = encoder_layer.embed_dim
-
-        self.init_weights()
-
-    def init_weights(self):
-        # initialize encoder layers
-        for layer in self.layers:
-            if hasattr(layer, "init_weights"):
-                layer.init_weights()
-
-    def forward(
-        self,
-        query,
-        spatial_shapes,
-        level_start_index,
-        reference_points,
-        query_pos=None,
-        query_key_padding_mask=None
-    ):
-        for layer in self.layers:
-            query = layer(
-                query,
-                query_pos,
-                reference_points,
-                spatial_shapes,
-                level_start_index,
-                query_key_padding_mask,
-            )
-
-        return query
-
+DNTransformerEncoder = DINOTransformerEncoder
 DNTransformerEncoderLayer = RelationTransformerEncoderLayer
 DNTransformerDecoderLayer = RelationTransformerDecoderLayer

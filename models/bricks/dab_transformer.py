@@ -5,10 +5,10 @@ from torch import nn
 
 from models.bricks.base_transformer import TwostageTransformer
 from models.bricks.basic import MLP
+from models.bricks.dino_transformer import DINOTransformerEncoder
 from models.bricks.dn_transformer import DNTransformerDecoder
 from models.bricks.relation_transformer import (
     RelationTransformerDecoderLayer,
-    RelationTransformerEncoder,
     RelationTransformerEncoderLayer,
 )
 
@@ -93,6 +93,6 @@ class DabTransformer(TwostageTransformer):
 
 
 DabTransformerEncoderLayer = RelationTransformerEncoderLayer
-DabTransformerEncoder = RelationTransformerEncoder
+DabTransformerEncoder = DINOTransformerEncoder
 DabTransformerDecoderLayer = RelationTransformerDecoderLayer
 DabTransformerDecoder = DNTransformerDecoder  # NOTE: equivalent under two-stage settings
