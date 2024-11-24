@@ -187,7 +187,7 @@ class RelationTransformerEncoder(nn.Module):
         level_start_index,
         reference_points,
         query_pos=None,
-        query_key_padding_mask=None
+        query_key_padding_mask=None,
     ):
         queries = [query]
         for layer in self.layers:
@@ -335,7 +335,9 @@ class RelationTransformerDecoder(nn.Module):
         pos_relation = attn_mask  # fallback pos_relation to attn_mask
         for layer_idx, layer in enumerate(self.layers):
             reference_points_input = reference_points.detach()[:, :, None] * valid_ratio_scale
-            query_sine_embed = get_sine_pos_embed(reference_points_input[:, :, 0, :])
+            query_sine_embed = get_sine_pos_embed(
+                reference_points_input[:, :, 0, :], self.embed_dim // 2
+            )
             query_pos = self.ref_point_head(query_sine_embed)
             query_pos = query_pos * self.query_scale(query) if layer_idx != 0 else query_pos
 
@@ -493,8 +495,8 @@ class PositionRelationEmbedding(nn.Module):
         self,
         embed_dim=256,
         num_heads=8,
-        temperature=10000.,
-        scale=100.,
+        temperature=10000.0,
+        scale=100.0,
         activation_layer=nn.ReLU,
         inplace=True,
     ):

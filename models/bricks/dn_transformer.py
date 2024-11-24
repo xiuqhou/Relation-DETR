@@ -156,7 +156,9 @@ class DNTransformerDecoder(nn.Module):
         pos_relation = attn_mask  # fallback pos_relation to attn_mask
         for layer_idx, layer in enumerate(self.layers):
             reference_points_input = reference_points.detach()[:, :, None] * valid_ratio_scale
-            query_sine_embed = get_sine_pos_embed(reference_points_input[:, :, 0, :])
+            query_sine_embed = get_sine_pos_embed(
+                reference_points_input[:, :, 0, :], self.embed_dim // 2
+            )
             query_pos = self.ref_point_head(query_sine_embed)
             query_pos = query_pos * self.query_scale(query) if layer_idx != 0 else query_pos
 
@@ -194,6 +196,7 @@ class DNTransformerDecoder(nn.Module):
         outputs_classes = torch.stack(outputs_classes)
         outputs_coords = torch.stack(outputs_coords)
         return outputs_classes, outputs_coords
+
 
 DNTransformerEncoder = DINOTransformerEncoder
 DNTransformerEncoderLayer = RelationTransformerEncoderLayer

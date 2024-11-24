@@ -206,7 +206,9 @@ class DINOTransformerDecoder(nn.Module):
         pos_relation = attn_mask  # fallback pos_relation to attn_mask
         for layer_idx, layer in enumerate(self.layers):
             reference_points_input = reference_points.detach()[:, :, None] * valid_ratio_scale
-            query_sine_embed = get_sine_pos_embed(reference_points_input[:, :, 0, :])
+            query_sine_embed = get_sine_pos_embed(
+                reference_points_input[:, :, 0, :], self.embed_dim // 2
+            )
             query_pos = self.ref_point_head(query_sine_embed)
 
             # relation embedding
@@ -232,7 +234,7 @@ class DINOTransformerDecoder(nn.Module):
             if layer_idx == self.num_layers - 1:
                 break
 
-            # NOTE: Here we integrate position_relation_embedding into DINO 
+            # NOTE: Here we integrate position_relation_embedding into DINO
             src_boxes = tgt_boxes if layer_idx >= 1 else reference_points
             tgt_boxes = output_coord
             pos_relation = self.position_relation_embedding(src_boxes, tgt_boxes).flatten(0, 1)

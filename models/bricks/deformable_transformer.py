@@ -95,7 +95,9 @@ class DeformableTransformer(TwostageTransformer):
         reference_points = topk_enc_outputs_coord.detach()
         # nn.Linear can not perceive the arrangement order of elements
         # so exchange_xy=True/False does not matter results
-        query_sine_embed = get_sine_pos_embed(reference_points, exchange_xy=False)
+        query_sine_embed = get_sine_pos_embed(
+            reference_points, self.embed_dim // 2, exchange_xy=False
+        )
         target = self.pos_trans_norm(self.pos_trans(query_sine_embed))
 
         # decoder
@@ -136,7 +138,7 @@ class DeformableTransformerDecoder(nn.Module):
         self.bbox_head = nn.ModuleList([copy.deepcopy(bbox_head) for _ in range(num_layers)])
 
         self.position_relation_embedding = PositionRelationEmbedding(16, self.num_heads)
-        
+
         self.init_weights()
 
     def init_weights(self):
@@ -170,7 +172,9 @@ class DeformableTransformerDecoder(nn.Module):
     ):
         # NOTE: the difference between DeformableDecoder and DabDecoder is that
         # Deformable does not introduce reference refinement for query pos
-        query_sine_embed = get_sine_pos_embed(reference_points, exchange_xy=False)
+        query_sine_embed = get_sine_pos_embed(
+            reference_points, self.embed_dim // 2, exchange_xy=False
+        )
         query_pos = self.ref_point_head(query_sine_embed)
 
         outputs_classes, outputs_coords = [], []
