@@ -304,7 +304,10 @@ def plot_bounding_boxes_on_image_pil(
     img_pillow = Image.fromarray(image)
     draw = ImageDraw.ImageDraw(img_pillow, mode="RGBA")
     space = int(font_scale * 2)
-    font = ImageFont.truetype("arial.ttf", int(15 * font_scale))
+    try:
+        font = ImageFont.truetype("arial.ttf", int(15 * font_scale))
+    except:
+        font = None
     for i, (label, box) in enumerate(zip(labels, boxes)):
         # convert colors to tuple
         c, dark_c, light_c = map(lambda x: tuple(x[i]), (fill_colors, dark_colors, light_colors))
